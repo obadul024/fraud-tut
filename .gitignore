@@ -1,0 +1,60 @@
+# Bytecode & cache
+__pycache__/
+*.py[cod]
+*.so
+
+*.csv:Zone.Identifier
+*.pkl:Zone.Identifier
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+env/
+.mlapp/
+.python-version
+
+# MLflow logs and metadata
+mlruns/
+mlruns.db
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDEs/editors
+.vscode/
+.idea/
+
+# Log files
+*.log
+
+# Data files (optional: only if you don’t want to track input/output data)
+# *.csv
+*.csv:Zone.Identifier
+*.tsv
+*.xlsx
+*.h5
+*.pkl
+*.joblib
+
+# Secrets and keys (you should manage this securely anyway)
+.env
+*.key
+*.pem
+
+# Docker & Compose
+*.tar
+*.bak
+*.gz
+*.swp
+docker-compose.override.yml
+
+# Ignore build artifacts
+build/
+dist/
+*.egg-info/
+
+# GitHub Actions cache
+.github/workflows/*.log

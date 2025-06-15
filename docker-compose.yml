@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  fastapi-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - mlruns:/app/mlruns
+    depends_on:
+      - mlflow
+    command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+    restart: always
+
+  mlflow:
+    image: python:3.9-slim
+    working_dir: /mlflow
+    volumes:
+      - mlruns:/mlflow/mlruns
+    ports:
+      - "5000:5000"
+    command: sh -c "pip install mlflow && mlflow ui --backend-store-uri /mlflow/mlruns --host 0.0.0.0 --port 5000"
+    restart: always
+
+volumes:
+  mlruns:

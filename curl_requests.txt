@@ -1,0 +1,36 @@
+#✅ 1. Test /predict endpoint
+
+#Let’s say you're testing with a single PCA-transformed data point (e.g., 30 features).
+#Example curl for rf_pca:
+
+curl -G "http://127.0.0.1:8000/predict" \
+  --data-urlencode "model=rf_pca" \
+  --data-urlencode "data=1.92" \
+  --data-urlencode "data=2.29" \
+  --data-urlencode "data=-1.62"
+
+
+
+#⚠️ Replace the data list with your actual test point from the PCA-transformed dataset (X_test_pca).
+#✅ 2. Test /score endpoint with flags
+#Minimal test: just accuracy for rf_pca
+
+curl -G "http://127.0.0.1:8000/score" \
+    --data-urlencode "model=rf_pca" \
+    --data-urlencode "acc_flag=true"
+
+# Full test: all metrics for lr_pca
+
+curl -G "http://127.0.0.1:8000/score" \
+    --data-urlencode "model=lr_pca" \
+    --data-urlencode "acc_flag=true" \
+    --data-urlencode "f1_flag=true" \
+    --data-urlencode "recall_flag=true" \
+    --data-urlencode "precision_flag=true" \
+    --data-urlencode "conf_flag=true" \
+    --data-urlencode "roc_flag=true"
+
+# to kill mlflow on port 5000
+# lsof -ti :5000 | xargs kill -9
+
+

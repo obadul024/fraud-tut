@@ -1,0 +1,8 @@
+__pycache__/
+mlapp/
+*.pyc
+*.sh
+mlruns/
+*.csv:Zone.Identifier
+.vscode/
+*.pkl:Zone.Identifier

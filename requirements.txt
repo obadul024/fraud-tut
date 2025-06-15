@@ -1,0 +1,9 @@
+numpy
+pandas
+scikit-learn
+joblib
+mlflow
+skl2onnx
+fastapi
+uvicorn
+python-multipart
