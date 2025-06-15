@@ -31,7 +31,7 @@ Thumbs.db
 *.log
 
 # Data files (optional: only if you don’t want to track input/output data)
-# *.csv
+*.csv
 *.csv:Zone.Identifier
 *.tsv
 *.xlsx
